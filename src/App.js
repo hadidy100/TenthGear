@@ -7,33 +7,131 @@ import crm from './crm.png';
 import car1 from './cars/car1.jpg';
 import car2 from './cars/car2.jpg';
 import car3 from './cars/car3.jpg';
+import cart from './cart.png'
 import background from './cars/background.jpg';
 import browse from './browse.png';
 import reports from './reports.png';
 import './App.css';
+import './about-us.css';
 import {Pay} from './payment.js';
+import {Inventory} from './inventory.js';
+import {Expense} from './expense.js';
+import {About} from './about.js';
+import {Report} from './report.js';
+import {CustomerRelations} from './crm.js';
 
 class App extends Component {
+
+  constructor(props) {
+      super(props);
+      /*call forms*/
+      this.state={
+        expense: false,
+        inventory: false,
+        payment: false,
+        about: false,
+        report: false,
+        crm: false
+      };
+      this.setExpenseForm = this.setExpenseForm.bind(this);
+      this.setInventoryForm = this.setInventoryForm.bind(this);
+      this.setPaymentForm = this.setPaymentForm.bind(this);
+      this.setAboutForm = this.setAboutForm.bind(this);
+      this.setReportForm = this.setReportForm.bind(this);
+      this.setCrmForm = this.setCrmForm.bind(this);
+    }
+
+  setExpenseForm(){
+    console.log('this is: ', this);
+    this.setState({
+      expense: true,
+      inventory: false,
+      payment: false,
+      about: false,
+      report:false,
+      crm: false
+    });
+  }
+
+  setInventoryForm(){
+    console.log('this is: ', this);
+    this.setState({
+      inventory: true,
+      expense: false,
+      payment: false,
+      about: false,
+      report:false,
+      crm: false
+    });
+  }
+
+  setPaymentForm(){
+    console.log('this is: ', this);
+    this.setState({
+      payment: true,
+      inventory: false,
+      expense: false,
+      about: false,
+      report:false,
+      crm: false
+    });
+  }
+
+  setAboutForm(){
+    console.log('this is: ',this);
+    this.setState({
+      about: true,
+      payment: false,
+      inventory: false,
+      expense: false,
+      report:false,
+      crm: false
+    });
+  }
+
+  setReportForm(){
+    console.log('this is: ',this);
+    this.setState({
+      report: true,
+      about: false,
+      payment: false,
+      inventory: false,
+      expense: false,
+      crm: false
+    });
+  }
+
+  setCrmForm(){
+    console.log('this is: ',this);
+    this.setState({
+      crm: true,
+      report: false,
+      about: false,
+      payment: false,
+      inventory: false,
+      expense: false
+    });
+  }
 
   dropMenuLeft() {
     return (
       <nav className="dropdown">
       <button className="myButton" name="prodButton">Main Menu</button>
       <div id="myDropdown" className="dropdown-content">
-        <a className="icons" href="#">
+        <a className="icons" onClick={this.addData} href="#">
           <img src={browse} height="80px" width="80px" />
           Browse
         </a>
-        <a className="icons" href="#">
+        <a className="icons" onClick={this.setCrmForm} href="#">
           <img src={crm} height="60px" width="60px" />
           CRM
         </a>
-        <a className="icons" href="#">
+        <a className="icons" onClick={this.setReportForm} href="#">
           <img src={reports} height="60px" width="60px" />
           Reports
         </a>
 
-        <a className="icons" href="#">
+        <a className="icons" onClick={this.setAboutForm} href="#">
           <img src={about} height="60px" width="60px" />
           About Us
         </a>
@@ -52,11 +150,11 @@ class App extends Component {
               <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
             </g>
           </svg>Customers</a>
-        <a className="icons" href="#">
+        <a className="icons" onClick={this.setInventoryForm} href="#">
           <img src={car} height="60px" width="100%" />
           Inventory
         </a>
-        <a className="icons" href="#">
+        <a className="icons" onClick={this.setExpenseForm} href="#">
           <span>
             <svg height="60px" width="120px" className="svg" viewBox="0 0 20 20">
               <g>
@@ -66,9 +164,9 @@ class App extends Component {
           </span>
           Expenses
         </a>
-        <a className="icons" href="#">
-          <img src={orders} height="90px" width="100%" />
-          Orders
+        <a className="icons" onClick={this.setPaymentForm} href="#">
+          <img className="center" src={cart} height="50px" width="30px" />
+          Checkout
         </a>
       </div>
     </nav>);
@@ -87,15 +185,24 @@ class App extends Component {
   }
 
   centerDiv() {
-    return (<div id="center" className="centerDiv">
-    </div>);
+    if(this.expense){
+      return(
+        <div id="center" className="centerDiv">
+          <Pay />
+        </div>);
+    }else{
+      return(
+        <div id="center" className="centerDiv">
+        <p>nothing clicked</p>
+        </div>
+      );
+    }
   }
 
   mainDiv() {
     return (<div className="mainDiv">
       {this.leftDiv()}
       {this.rightDiv()}
-      {this.centerDiv()}
     </div>);
   }
 
@@ -107,10 +214,10 @@ class App extends Component {
         <h1 className="App-title">10TH GEAR AUTO DEALER</h1>
       </header>
       {this.mainDiv()}
+      <div id="center" className="centerDiv">{this.state.expense ? <Expense /> : this.state.inventory ? <Inventory /> : this.state.payment ? <Pay /> : this.state.about ? <About /> : this.state.report ? <Report /> : this.state.crm ? <CustomerRelations /> : null}</div>
+      <div><p></p></div>
     </div>);
   }
 }
-
-
 
 export default App;

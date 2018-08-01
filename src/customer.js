@@ -7,17 +7,17 @@ export class Inventory extends Component {
     return (
       <div>
         <style dangerouslySetInnerHTML={{__html: "\nbody {\n  font-family: Arial;\n  font-size: 16px;\n  padding: 0px;\n}\n\n* {\n  box-sizing: border-box;\n}\n\n.row {\n  display: -ms-flexbox; /* IE10 */\n  display: flex;\n  -ms-flex-wrap: wrap; /* IE10 */\n  flex-wrap: wrap;\n  margin: 0 -16px;\n}\n\n.col-25 {\n  -ms-flex: 25%; /* IE10 */\n  flex: 25%;\n}\n\n.col-50 {\n \n}\n\n.col-75 {\n  -ms-flex: 75%; /* IE10 */\n  flex: 75%;\n}\n\n.col-25,\n.col-50,\n.col-75 {\n  padding: 0 16px;\n}\n\n.container {\n  background-color: #f2f2f2;\n  padding: 5px 20px 15px 20px;\n  border: 1px solid lightgrey;\n  border-radius: 3px;\n}\n\ninput[type=text] {\n  width: 100%;\n  margin-bottom: 20px;\n  padding: 12px;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n}\n\nlabel {\n  margin-bottom: 10px;\n  display: block;\n}\n\n.icon-container {\n  margin-bottom: 20px;\n  padding: 7px 0;\n  font-size: 24px;\n}\n\n.btn {\n  background-color: #4CAF50;\n  color: white;\n  padding: 12px;\n  margin: 10px 0;\n  border: none;\n  width: 100%;\n  border-radius: 3px;\n  cursor: pointer;\n  font-size: 17px;\n}\n\n.btn:hover {\n  background-color: #45a049;\n}\n\na {\n  color: #2196F3;\n}\n\nhr {\n  border: 1px solid lightgrey;\n}\n\nspan.price {\n  float: right;\n  color: grey;\n}\n\n/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the \"cart\" column go on top) */\n@media (max-width: 800px) {\n  .row {\n    flex-direction: column-reverse;\n  }\n  .col-25 {\n    margin-bottom: 20px;\n  }\n}\n" }} />
-        <h2>Inventory Entry Form</h2>
+        <h2>Customer Entry Form</h2>
         <div className="row">
           <div className="col-75">
             <div className="container">
               <form action="/action_page.php">
                 <div className="row">
                   <div className="col-50">
-                    <h3>Inventory Entry</h3>
+                    <h3>Customer Entry</h3>
                     <div className="row">
                       <div className="col-50">
-                        <label htmlFor="vinNum">Vin Number</label>
+                        <label htmlFor="vinNum">First Name</label>
                         <input type="text" id="vinNum" name="vinNum" placeholder="12345678" />
                       </div>
                       <div className="col-50">
