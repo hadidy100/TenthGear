@@ -31,7 +31,9 @@ class App extends Component {
         payment: false,
         about: false,
         report: false,
-        crm: false
+        crm: false,
+        browse: false,
+        cars: []
       };
       this.setExpenseForm = this.setExpenseForm.bind(this);
       this.setInventoryForm = this.setInventoryForm.bind(this);
@@ -39,7 +41,36 @@ class App extends Component {
       this.setAboutForm = this.setAboutForm.bind(this);
       this.setReportForm = this.setReportForm.bind(this);
       this.setCrmForm = this.setCrmForm.bind(this);
+      this.setBrowseForm = this.setBrowseForm.bind(this);
     }
+
+    componentDidMount(){
+      this.getCars();
+    }
+
+    getCars = () =>{
+      fetch('http://localhost:4000/cars')
+      .then(response=> response.json())
+      .then(response=>this.setState({cars:response.data}));
+    }
+
+    renderCars = ({col1,col2}) =>
+    <div key={col1}>
+      <p>column1 {col1} {col2}</p>
+    </div>
+
+  setBrowseForm(){
+
+    this.setState({
+      browse: true,
+      expense: false,
+      inventory: false,
+      payment: false,
+      about: false,
+      report:false,
+      crm: false,
+    });
+  }
 
   setExpenseForm(){
     console.log('this is: ', this);
@@ -49,6 +80,7 @@ class App extends Component {
       payment: false,
       about: false,
       report:false,
+      browse: false,
       crm: false
     });
   }
@@ -61,6 +93,7 @@ class App extends Component {
       payment: false,
       about: false,
       report:false,
+      browse: false,
       crm: false
     });
   }
@@ -73,6 +106,7 @@ class App extends Component {
       expense: false,
       about: false,
       report:false,
+      browse: false,
       crm: false
     });
   }
@@ -85,6 +119,7 @@ class App extends Component {
       inventory: false,
       expense: false,
       report:false,
+      browse: false,
       crm: false
     });
   }
@@ -97,6 +132,7 @@ class App extends Component {
       payment: false,
       inventory: false,
       expense: false,
+      browse: false,
       crm: false
     });
   }
@@ -109,6 +145,7 @@ class App extends Component {
       about: false,
       payment: false,
       inventory: false,
+      browse: false,
       expense: false
     });
   }
@@ -118,7 +155,7 @@ class App extends Component {
       <nav className="dropdown">
       <button className="myButton" name="prodButton">Main Menu</button>
       <div id="myDropdown" className="dropdown-content">
-        <a className="icons" onClick={this.addData} href="#">
+        <a className="icons" onClick={this.setBrowseForm} href="#">
           <img src={browse} height="80px" width="80px" />
           Browse
         </a>
@@ -206,7 +243,24 @@ class App extends Component {
     </div>);
   }
 
+  getBrowse(){
+    if(this.state.browse){
+      return(<div>
+              {this.state.cars.map(this.renderCars)}
+            </div>);
+    }
+    else{
+      return(
+        <div>
+          <p>browse is false</p>
+      </div>
+
+      );
+    }
+  }
+
   render() {
+    const {products} = this.state;
     return (<div className="App">
       <header className="App-header">
         <img className="leftImg" src="gear.gif" height="100px" width="100px"/>
@@ -214,8 +268,17 @@ class App extends Component {
         <h1 className="App-title">10TH GEAR AUTO DEALER</h1>
       </header>
       {this.mainDiv()}
-      <div id="center" className="centerDiv">{this.state.expense ? <Expense /> : this.state.inventory ? <Inventory /> : this.state.payment ? <Pay /> : this.state.about ? <About /> : this.state.report ? <Report /> : this.state.crm ? <CustomerRelations /> : null}</div>
-      <div><p></p></div>
+      <div id="center" className="centerDiv">{
+          this.state.expense ? <Expense /> :
+          this.state.inventory ? <Inventory /> :
+          this.state.payment ? <Pay /> :
+          this.state.about ? <About /> :
+          this.state.report ? <Report /> :
+          this.state.crm ? <CustomerRelations /> :
+          null}
+      {this.getBrowse()}
+      </div>
+      {/*{this.state.cars.map(this.renderCars)}*/}
     </div>);
   }
 }

@@ -233,3 +233,21 @@ h1 {
 .reportsDiv{
   display:inline-block;
 }
+
+.crmBoxed{
+  border: 1px solid black;
+}
+
+.but1{
+  position:fixed;
+  /*top right bottom left*/
+  padding:25px;
+  width:270px;
+  margin: 0 80px;
+  border-radius:25px;
+  opacity:0.1;
+}
+
+.but1:hover{
+  cursor:pointer;
+}
