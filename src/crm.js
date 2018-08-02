@@ -21,14 +21,23 @@ import report1 from './reports/report1.ico';
 import report2 from './reports/report2.png';
 import report3 from './reports/report3.png';
 import report4 from './reports/report4.png';
-import crmIcon from './crm/crm.gif';
+import crmIcon from './crm/crm2.gif';
 
 export class CustomerRelations extends Component {
   render() {
     return (
       <div className="reportsDiv">
         <h1>CRM Coming Soon</h1>
+        <div className="crmBoxed">
+          <button className="but1"></button>
+          <button className="but2"></button>
+          <button className="but3"></button>
+          <button className="but4"></button>
+          <button className="but5"></button>
+          <button className="but6"></button>
+          <button className="but7"></button>
         <a className="crm" ><img className="crm" src={crmIcon}></img></a>
+        </div>
       </div>
     );
   }

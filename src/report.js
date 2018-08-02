@@ -4,9 +4,6 @@ import car from './car.svg';
 import orders from './orders.png';
 import about from './about.png';
 import crm from './crm.png';
-import car1 from './cars/car1.jpg';
-import car2 from './cars/car2.jpg';
-import car3 from './cars/car3.jpg';
 import cart from './cart.png'
 import background from './cars/background.jpg';
 import browse from './browse.png';
