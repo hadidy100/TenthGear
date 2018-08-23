@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import './framework.css';
-import './about-us.css';
-import ivan from './ivan.gif';
-import anas from './anas.gif';
-import david from './david.gif';
-import shub from './shub.gif';
+import './stylesheets/about-us.css';
+import ivan from './img/ivan.gif';
+import anas from './img/anas.gif';
+import david from './img/david.gif';
+import shub from './img/shub.gif';
 
 export class About extends Component {
   render() {
@@ -31,11 +29,11 @@ export class About extends Component {
               </figcaption>
             </figure>
             <ul>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
             </ul>
           </li>
           <li className="one_quarter">
@@ -46,11 +44,11 @@ export class About extends Component {
               </figcaption>
             </figure>
             <ul>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
             </ul>
           </li>
           <li className="one_quarter first">
@@ -61,11 +59,11 @@ export class About extends Component {
               </figcaption>
             </figure>
             <ul>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
             </ul>
           </li>
           <li className="one_quarter">
@@ -76,11 +74,11 @@ export class About extends Component {
               </figcaption>
             </figure>
             <ul>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
-              <li><a href="#"><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
+              <li><a href=""><img src="images/demo/social-icon.png" alt="" /></a></li>
             </ul>
           </li>
         </ul>
