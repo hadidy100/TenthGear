@@ -123,7 +123,7 @@ class App extends Component {
       <div className="reportsDiv">
       <div className="crmBoxed">
         <form onSubmit={this.checkLogin}>
-          <div className="button9">
+          <div className="startButton">
               <div id="status" className="status">Login</div>
               <div className="user"><input name="user" type="text" placeholder="username..."></input></div>
               <div className="pass"><input name="pass" type="password" placeholder="password..."></input></div>
@@ -139,27 +139,37 @@ class App extends Component {
     return(
       <div className="reportsDiv">
       <div className="crmBoxed">
-        <div class="button1" onClick={this.setContactForm}>
+        <div className="button1" onClick={this.setContactForm}>
         </div>
-        <div class="button2" onClick={this.setInventoryForm}>
+        <div className="button2" onClick={this.setInventoryForm}>
         </div>
-        <div class="button3" onClick={this.setPaymentForm}>
+        <div className="button3" onClick={this.setPaymentForm}>
         </div>
-        <div class="button4" onClick={this.setBrowseForm}>
+        <div className="button4" onClick={this.setBrowseForm}>
         </div>
-        <div class="button5" onClick={this.setAboutForm}>
+        <div className="button5" onClick={this.setAboutForm}>
         </div>
-        <div class="button6" onClick={this.setSalesDeskForm}>
+        <div className="button6" onClick={this.setSalesDeskForm}>
         </div>
-        <div class="button7" onClick={this.setExpenseForm}>
+        <div className="button7" onClick={this.setExpenseForm}>
         </div>
-        <div class="button10" onClick={this.logout}>
+        <div className="button8">
+        </div>
+        <div className="button9">
+        </div>
+        <div className="button10">
+        </div>
+        <div className="button11">
+        </div>
+        <div className="button12">
+        </div>
+        <div className="centerButton" onClick={this.logout}>
+          <label className="logoutLabel">Click to Logout</label>
         </div>
 
     </div>
   </div>);
 }
-
 
   searchBar(){
     return(
