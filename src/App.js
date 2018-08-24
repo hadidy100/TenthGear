@@ -120,8 +120,8 @@ class App extends Component {
 
   login(){
     return(
-      <div className="reportsDiv">
-      <div className="crmBoxed">
+      <div className="loginBoxParent">
+      <div className="loginBox">
         <form onSubmit={this.checkLogin}>
           <div className="startButton">
               <div id="status" className="status">Login</div>
