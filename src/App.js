@@ -121,16 +121,14 @@ class App extends Component {
   login(){
     return(
       <div className="loginBoxParent">
-      <div className="loginBox">
+        <div className="innerBox">
         <form onSubmit={this.checkLogin}>
-          <div className="startButton">
               <div id="status" className="status">Login</div>
-              <div className="user"><input name="user" type="text" placeholder="username..."></input></div>
-              <div className="pass"><input name="pass" type="password" placeholder="password..."></input></div>
+              <div className="user"><input className="user" name="user" type="text" placeholder="username..."></input></div>
+              <div className="pass"><input name="pass" className="pass" type="password" placeholder="password..."></input></div>
               <div><button type="submit" className="log" value="Submit">Login</button></div>
-          </div>
         </form>
-    </div>
+      </div>
   </div>
     );
   }

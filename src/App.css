@@ -248,47 +248,57 @@ h1 {
   border-radius:20px;
 }
 
-.status{
-  vertical-align: top;
-  font-size:26px;
-  font-weight:bold;
-  position:relative;
-  overflow-x:hidden;
+.loginBoxParent{
+  display:flex;
+  margin-top:100px;
+  justify-content: center;
+  width:auto;
 }
 
+.innerBox{
+  border-radius: 20px;
+  background-image: radial-gradient(rgba(124, 158, 172,0.1),rgba(100, 126, 136,0.9));
+  box-shadow: 0px 15px 35px 5px;
+  width:30%;
+}
 
-
-.loginBox{
-  position:relative;
-  border-radius:20px;
-  left:25%;
-  width:50%;
-  height:40vh;
-  overflow-y: hidden;
-  background-color:rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 16px 100px 5px;
+.status{
+  flex:auto;
+  font-size:26px;
+  font-weight:bold;
+  overflow-x:hidden;
 }
 
 .user{
-  position:relative;
-  width:100%;
+  width:83.5%;
+  margin:auto;
   overflow-x:hidden;
-
+  border-radius: 4px;
 }
 .pass{
-  position:relative;
-  width:100%;
+  width:83.5%;
+  margin:auto;
   overflow-x:hidden;
+  border-radius: 4px;
 }
 
 .log{
-  position:relative;
   font-size:24px;
   width:70%;
   color:white;
-  background-color:rgb(9, 173, 45);
+  background-color:rgba(105, 187, 219, 0.77);
   overflow-x: hidden;
+  border-radius: 6px;
+  border:0;
 }
+
+
+.log:hover{
+  cursor:pointer;
+  background-color:rgba(105, 187, 219, 1);
+
+}
+
 .startButton{
   top:50%;
   position: absolute;
@@ -315,11 +325,6 @@ input,textarea{
   left:423px;
   top: 230px;
   visibility: hidden;
-}
-
-
-.log:hover{
-  cursor:pointer;
 }
 
 .logLabelHide{
